@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace LemonTree.Test.Console.Interfaces
+namespace LemonTree.Test.Business.Interfaces
 {
     public interface IChessPiece
     {

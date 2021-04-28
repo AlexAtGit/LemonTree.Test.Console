@@ -1,5 +1,5 @@
 ﻿
-namespace LemonTree.Test.Console.Classes
+namespace LemonTree.Test.Business.Models
 {
 	/// <summary>
 	/// Provides methods to return the adjacent digit to a given digit, according to the specified direction

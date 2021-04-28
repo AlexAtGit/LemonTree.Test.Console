@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace LemonTree.Test.Console.Classes
+namespace LemonTree.Test.Business.Models
 {
     public class King : ChessPiece
     {
@@ -96,110 +96,6 @@ namespace LemonTree.Test.Console.Classes
                 if (skipRight && skipLeft && skipDown && skipUp &&
                     skipRightUp && skipLeftUp && skipRightDown && skipLeftDown) break;
             }
-        }
-
-        /// <summary>
-        /// Return the next valid digit from the current digit, based on this move
-        /// </summary>
-        /// <param name="currentNo"></param>
-        /// <param name="sequence"></param>
-        /// <returns></returns>
-        private int? MoveRight(int currentNo, List<int> sequence)
-        {
-            int? nextNo = currentNo;
-
-            do
-            {
-                nextNo = Keypad.RightOf(nextNo.Value);
-                if (nextNo.HasValue && !sequence.Contains(nextNo.Value)) break;
-            }
-            while (nextNo.HasValue);
-
-            return nextNo;
-        }
-        private int? MoveLeft(int currentNo, List<int> sequence)
-        {
-            int? nextNo = currentNo;
-
-            do
-            {
-                nextNo = Keypad.LeftOf(nextNo.Value);
-                if (nextNo.HasValue && !sequence.Contains(nextNo.Value)) break;
-            }
-            while (nextNo.HasValue);
-
-            return nextNo;
-        }
-        private int? MoveUp(int currentNo, List<int> sequence)
-        {
-            int? nextNo = currentNo;
-
-            do
-            {
-                nextNo = Keypad.UpOf(nextNo.Value);
-                if (nextNo.HasValue && !sequence.Contains(nextNo.Value)) break;
-            }
-            while (nextNo.HasValue);
-
-            return nextNo;
-        }
-        private int? MoveDown(int currentNo, List<int> sequence)
-        {
-            int? nextNo = currentNo;
-
-            do
-            {
-                nextNo = Keypad.DownOf(nextNo.Value);
-                if (nextNo.HasValue && !sequence.Contains(nextNo.Value)) break;
-            }
-            while (nextNo.HasValue);
-
-            return nextNo;
-        }
-
-        private int? MoveRightUp(int currentNo, List<int> sequence)
-        {
-            int? nextNo = Keypad.RightOf(currentNo);
-            if (nextNo.HasValue)
-            {
-                nextNo = Keypad.UpOf(nextNo.Value);
-                if (nextNo.HasValue && sequence.Contains(nextNo.Value)) nextNo = null;
-            }
-
-            return nextNo;
-        }
-        private int? MoveRightDown(int currentNo, List<int> sequence)
-        {
-            int? nextNo = Keypad.RightOf(currentNo);
-            if (nextNo.HasValue)
-            {
-                nextNo = Keypad.DownOf(nextNo.Value);
-                if (nextNo.HasValue && sequence.Contains(nextNo.Value)) nextNo = null;
-            }
-
-            return nextNo;
-        }
-        private int? MoveLeftUp(int currentNo, List<int> sequence)
-        {
-            int? nextNo = Keypad.LeftOf(currentNo);
-            if (nextNo.HasValue)
-            {
-                nextNo = Keypad.UpOf(nextNo.Value);
-                if (nextNo.HasValue && sequence.Contains(nextNo.Value)) nextNo = null;
-            }
-
-            return nextNo;
-        }
-        private int? MoveLeftDown(int currentNo, List<int> sequence)
-        {
-            int? nextNo = Keypad.LeftOf(currentNo);
-            if (nextNo.HasValue)
-            {
-                nextNo = Keypad.DownOf(nextNo.Value);
-                if (nextNo.HasValue && sequence.Contains(nextNo.Value)) nextNo = null;
-            }
-
-            return nextNo;
         }
     }
 }

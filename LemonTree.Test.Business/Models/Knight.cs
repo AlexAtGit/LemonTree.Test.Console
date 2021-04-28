@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace LemonTree.Test.Console.Classes
+namespace LemonTree.Test.Business.Models
 {
     public class Knight : ChessPiece
     {
@@ -34,7 +34,7 @@ namespace LemonTree.Test.Console.Classes
             {
                 if (!skipRightUp)
                 {
-                    nextNumber = MoveRightUp(startNo.Value, subSequence);
+                    nextNumber = MoveRightRightUp(startNo.Value, subSequence);
 
                     GetAllMoves(nextNumber, subSequence);
                     skipRightUp = true;
@@ -42,7 +42,7 @@ namespace LemonTree.Test.Console.Classes
 
                 if (!skipRightDown)
                 {
-                    nextNumber = MoveRightDown(startNo.Value, subSequence);
+                    nextNumber = MoveRightRightDown(startNo.Value, subSequence);
 
                     GetAllMoves(nextNumber, subSequence);
                     skipRightDown = true;
@@ -50,7 +50,7 @@ namespace LemonTree.Test.Console.Classes
 
                 if (!skipLeftUp)
                 {
-                    nextNumber = MoveLeftUp(startNo.Value, subSequence);
+                    nextNumber = MoveLeftLeftUp(startNo.Value, subSequence);
 
                     GetAllMoves(nextNumber, subSequence);
                     skipLeftUp = true;
@@ -58,7 +58,7 @@ namespace LemonTree.Test.Console.Classes
 
                 if (!skipLeftDown)
                 {
-                    nextNumber = MoveLeftDown(startNo.Value, subSequence);
+                    nextNumber = MoveLeftLeftDown(startNo.Value, subSequence);
 
                     GetAllMoves(nextNumber, subSequence);
                     skipLeftDown = true;
@@ -66,7 +66,7 @@ namespace LemonTree.Test.Console.Classes
 
                 if (!skipDownRight)
                 {
-                    nextNumber = MoveDownRight(startNo.Value, subSequence);
+                    nextNumber = MoveDownDownRight(startNo.Value, subSequence);
 
                     GetAllMoves(nextNumber, subSequence);
                     skipDownRight = true;
@@ -74,7 +74,7 @@ namespace LemonTree.Test.Console.Classes
 
                 if (!skipDownLeft)
                 {
-                    nextNumber = MoveDownLeft(startNo.Value, subSequence);
+                    nextNumber = MoveDownDownLeft(startNo.Value, subSequence);
 
                     GetAllMoves(nextNumber, subSequence);
                     skipDownLeft = true;
@@ -82,7 +82,7 @@ namespace LemonTree.Test.Console.Classes
 
                 if (!skipUpRight)
                 {
-                    nextNumber = MoveUpRight(startNo.Value, subSequence);
+                    nextNumber = MoveUpUpRight(startNo.Value, subSequence);
 
                     GetAllMoves(nextNumber, subSequence);
                     skipUpRight = true;
@@ -90,7 +90,7 @@ namespace LemonTree.Test.Console.Classes
 
                 if (!skipUpLeft)
                 {
-                    nextNumber = MoveUpLeft(startNo.Value, subSequence);
+                    nextNumber = MoveUpUpLeft(startNo.Value, subSequence);
 
                     GetAllMoves(nextNumber, subSequence);
                     skipUpLeft = true;
@@ -109,7 +109,7 @@ namespace LemonTree.Test.Console.Classes
         /// <param name="currentNo"></param>
         /// <param name="sequence"></param>
         /// <returns></returns>
-        private int? MoveRightUp(int currentNo, List<int> sequence)
+        private static int? MoveRightRightUp(int currentNo, List<int> sequence)
         {
             int? nextNo = Keypad.RightOf(currentNo);
             if (nextNo.HasValue)
@@ -124,7 +124,7 @@ namespace LemonTree.Test.Console.Classes
 
             return null;
         }
-        private int? MoveRightDown(int currentNo, List<int> sequence)
+        private static int? MoveRightRightDown(int currentNo, List<int> sequence)
         {
             int? nextNo = Keypad.RightOf(currentNo);
             if (nextNo.HasValue)
@@ -140,7 +140,7 @@ namespace LemonTree.Test.Console.Classes
             return null;
         }
 
-        private int? MoveLeftUp(int currentNo, List<int> sequence)
+        private static int? MoveLeftLeftUp(int currentNo, List<int> sequence)
         {
             int? nextNo = Keypad.LeftOf(currentNo);
             if (nextNo.HasValue)
@@ -155,7 +155,7 @@ namespace LemonTree.Test.Console.Classes
 
             return null;
         }
-        private int? MoveLeftDown(int currentNo, List<int> sequence)
+        private static int? MoveLeftLeftDown(int currentNo, List<int> sequence)
         {
             int? nextNo = Keypad.LeftOf(currentNo);
             if (nextNo.HasValue)
@@ -171,7 +171,7 @@ namespace LemonTree.Test.Console.Classes
             return null;
         }
 
-        private int? MoveUpRight(int currentNo, List<int> sequence)
+        private static int? MoveUpUpRight(int currentNo, List<int> sequence)
         {
             int? nextNo = Keypad.UpOf(currentNo);
             if (nextNo.HasValue)
@@ -186,7 +186,7 @@ namespace LemonTree.Test.Console.Classes
 
             return null;
         }
-        private int? MoveDownRight(int currentNo, List<int> sequence)
+        private static int? MoveDownDownRight(int currentNo, List<int> sequence)
         {
             int? nextNo = Keypad.DownOf(currentNo);
             if (nextNo.HasValue)
@@ -202,7 +202,7 @@ namespace LemonTree.Test.Console.Classes
             return null;
         }
 
-        private int? MoveUpLeft(int currentNo, List<int> sequence)
+        private static int? MoveUpUpLeft(int currentNo, List<int> sequence)
         {
             int? nextNo = Keypad.UpOf(currentNo);
             if (nextNo.HasValue)
@@ -217,7 +217,7 @@ namespace LemonTree.Test.Console.Classes
 
             return null;
         }
-        private int? MoveDownLeft(int currentNo, List<int> sequence)
+        private static int? MoveDownDownLeft(int currentNo, List<int> sequence)
         {
             int? nextNo = Keypad.DownOf(currentNo);
             if (nextNo.HasValue)

@@ -1,6 +1,7 @@
-﻿using LemonTree.Test.Console.Classes;
-using LemonTree.Test.Console.Interfaces;
+﻿using LemonTree.Test.Business.Models;
+using LemonTree.Test.Business.Interfaces;
 using System.Collections.Generic;
+using LemonTree.Test.Business;
 
 namespace LemonTree.Test.Console
 {
@@ -46,7 +47,7 @@ namespace LemonTree.Test.Console
                     // Convert to a text representation, i.e. NNN-NNNN
                     foreach (var phoneDigits in phoneDigitsList)
                     {
-                        listOfPhoneNumbers.Add(Get7DigitPhoneNumber(phoneDigits));
+                        listOfPhoneNumbers.Add(Utility.Get7DigitPhoneNumber(phoneDigits));
                     }
                     System.Console.WriteLine($"      Starting with {i} digit, found {phoneDigitsList.Count} possible phone numbers");
                 }
@@ -64,7 +65,7 @@ namespace LemonTree.Test.Console
                     // Convert to a text representation, i.e. NNN-NNNN
                     foreach (var phoneDigits in phoneDigitsList)
                     {
-                        listOfPhoneNumbers.Add(Get7DigitPhoneNumber(phoneDigits));
+                        listOfPhoneNumbers.Add(Utility.Get7DigitPhoneNumber(phoneDigits));
                     }
                     System.Console.WriteLine($"      Starting with {i} digit, found {phoneDigitsList.Count} possible phone numbers");
                 }
@@ -76,21 +77,6 @@ namespace LemonTree.Test.Console
             System.Console.WriteLine("LemonTree Test End ----------------------------");
         }
 
-        /// <summary>
-        /// Format the digit as textual representation, i.e. NNN-NNNN
-        /// </summary>
-        /// <param name="phoneDigits"></param>
-        /// <returns></returns>
-        private static string Get7DigitPhoneNumber(List<int> phoneDigits)
-        {
-            var phoneNumberText = string.Empty;
-            for (var n = 0; n < phoneDigits.Count; n++)
-            {
-                phoneNumberText += phoneDigits[n].ToString();
-                if (n == 2) phoneNumberText += "-";
-            }
-            return phoneNumberText;
-        }
         private static void DisplayResults(Dictionary<IChessPiece, List<string>> dicChessPiecePhoneNumbers)
         {
             System.Console.WriteLine("Results ===========================================");
